@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Plus, Pencil, Trash2 } from 'lucide-react';
+import { Plus, Pencil, Trash2, ArrowLeft } from 'lucide-react';
 import { supabase } from '../../lib/supabase';
 import yunguyoImg from '../../assets/yunguyo.jpg';
 
@@ -81,7 +81,16 @@ export default function CategoriasAdmin() {
   return (
     <div className="space-y-6">
       <div className="flex justify-between items-center">
-        <h2 className="text-2xl font-bold text-gray-900">Categorías</h2>
+        <div className="flex items-center gap-4">
+          <Link
+            to="/admin"
+            className="flex items-center gap-2 text-gray-600 hover:text-gray-900"
+          >
+            <ArrowLeft className="h-5 w-5" />
+            Volver al panel
+          </Link>
+          <h2 className="text-2xl font-bold text-gray-900">Categorías</h2>
+        </div>
         <Link
           to="/admin/categorias/nueva"
           className="flex items-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700"

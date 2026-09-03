@@ -12,11 +12,13 @@ Generated: 2026-09-03
 ### Commit 1: feat(business): add business detail page
 
 **Files:**
+
 - src/lib/routes.ts
 - src/pages/public/EmprendimientoDetalle.tsx
 - src/App.tsx
 
 **Command:**
+
 ```bash
 git add src/lib/routes.ts src/pages/public/EmprendimientoDetalle.tsx src/App.tsx
 git commit -m "feat(business): add business detail page"
@@ -29,9 +31,11 @@ git commit -m "feat(business): add business detail page"
 ### Commit 2: test(e2e): add business detail tests
 
 **Files:**
+
 - e2e/business-detail.spec.ts
 
 **Command:**
+
 ```bash
 git add e2e/business-detail.spec.ts
 git commit -m "test(e2e): add business detail tests"
@@ -44,9 +48,11 @@ git commit -m "test(e2e): add business detail tests"
 ### Commit 3: docs: add phase 7 plan
 
 **Files:**
+
 - docs/phases/phase-7-business-detail/plan.md
 
 **Command:**
+
 ```bash
 git add docs/phases/phase-7-business-detail/plan.md
 git commit -m "docs: add phase 7 plan"
@@ -65,8 +71,8 @@ git commit -m "docs: add phase 7 plan"
 
 ## Execution Log
 
-| #   | Type  | Scope | Description                     | SHA       | Status |
-| --- | ----- | ----- | ------------------------------- | --------- | ------ |
-| 1   | feat  | business | add business detail page | b2ebf4f | ✅     |
-| 2   | test  | e2e   | add business detail tests | 2cbf39f | ✅     |
-| 3   | docs  | phase | add phase 7 plan | e5b558b | ✅     |
+| #   | Type | Scope    | Description               | SHA     | Status |
+| --- | ---- | -------- | ------------------------- | ------- | ------ |
+| 1   | feat | business | add business detail page  | b2ebf4f | ✅     |
+| 2   | test | e2e      | add business detail tests | 2cbf39f | ✅     |
+| 3   | docs | phase    | add phase 7 plan          | e5b558b | ✅     |

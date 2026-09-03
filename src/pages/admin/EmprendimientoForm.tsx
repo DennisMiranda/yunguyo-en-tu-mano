@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
-import { Upload, X, Plus } from 'lucide-react';
+import { Upload, X, Plus, ArrowLeft } from 'lucide-react';
 import { supabase } from '../../lib/supabase';
 import type { Json } from '../../lib/database.types';
 
@@ -240,6 +240,16 @@ export default function EmprendimientoForm() {
 
   return (
     <div className="max-w-2xl">
+      <div className="mb-4">
+        <button
+          type="button"
+          onClick={() => navigate('/admin/emprendimientos')}
+          className="inline-flex items-center gap-2 text-gray-600 hover:text-gray-900"
+        >
+          <ArrowLeft className="h-5 w-5" />
+          Volver al panel
+        </button>
+      </div>
       <h2 className="text-2xl font-bold text-gray-900 mb-6">
         {esEdicion ? 'Editar emprendimiento' : 'Nuevo emprendimiento'}
       </h2>

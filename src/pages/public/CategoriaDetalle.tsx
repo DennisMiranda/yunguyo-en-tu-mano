@@ -29,7 +29,11 @@ export default function CategoriaDetalle() {
   const [emprendimientos, setEmprendimientos] = useState<Emprendimiento[]>([]);
   const [cargando, setCargando] = useState(true);
 
-  useSEO(categoria ? getSEOForCategoria(categoria.nombre) : { title: 'Categoría | Yunguyo en tu mano', description: 'Cargando...' });
+  useSEO(
+    categoria
+      ? getSEOForCategoria(categoria.nombre)
+      : { title: 'Categoría | Yunguyo en tu mano', description: 'Cargando...' }
+  );
 
   useEffect(() => {
     const cargarDatos = async () => {

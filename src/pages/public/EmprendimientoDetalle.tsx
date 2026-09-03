@@ -60,7 +60,10 @@ export default function EmprendimientoDetalle() {
           emprendimiento.nombre,
           emprendimiento.categorias?.nombre || ''
         )
-      : { title: 'Emprendimiento | Yunguyo en tu mano', description: 'Cargando...' }
+      : {
+          title: 'Emprendimiento | Yunguyo en tu mano',
+          description: 'Cargando...',
+        }
   );
 
   useEffect(() => {

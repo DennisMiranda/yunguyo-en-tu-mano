@@ -12,10 +12,12 @@ Generated: 2026-09-03
 ### Commit 1: feat(admin-users): add user management
 
 **Files:**
+
 - src/pages/admin/Usuarios.tsx
 - src/App.tsx
 
 **Command:**
+
 ```bash
 git add src/pages/admin/Usuarios.tsx src/App.tsx
 git commit -m "feat(admin-users): add user management"
@@ -28,9 +30,11 @@ git commit -m "feat(admin-users): add user management"
 ### Commit 2: test(e2e): add admin users tests
 
 **Files:**
+
 - e2e/admin-users.spec.ts
 
 **Command:**
+
 ```bash
 git add e2e/admin-users.spec.ts
 git commit -m "test(e2e): add admin users tests"
@@ -43,9 +47,11 @@ git commit -m "test(e2e): add admin users tests"
 ### Commit 3: docs: add phase 10 plan
 
 **Files:**
+
 - docs/phases/phase-10-admin-users/plan.md
 
 **Command:**
+
 ```bash
 git add docs/phases/phase-10-admin-users/plan.md
 git commit -m "docs: add phase 10 plan"
@@ -64,8 +70,8 @@ git commit -m "docs: add phase 10 plan"
 
 ## Execution Log
 
-| #   | Type  | Scope | Description                     | SHA       | Status |
-| --- | ----- | ----- | ------------------------------- | --------- | ------ |
-| 1   | feat  | admin-users | add user management | 7f43f72 | ✅     |
-| 2   | test  | e2e   | add admin users tests | c941502 | ✅     |
-| 3   | docs  | phase | add phase 10 plan | c969721 | ✅     |
+| #   | Type | Scope       | Description           | SHA     | Status |
+| --- | ---- | ----------- | --------------------- | ------- | ------ |
+| 1   | feat | admin-users | add user management   | 7f43f72 | ✅     |
+| 2   | test | e2e         | add admin users tests | c941502 | ✅     |
+| 3   | docs | phase       | add phase 10 plan     | c969721 | ✅     |

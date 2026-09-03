@@ -9,9 +9,7 @@ export function useSEO(data: SEOData) {
   useEffect(() => {
     document.title = data.title;
 
-    const metaDescription = document.querySelector(
-      'meta[name="description"]'
-    );
+    const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
       metaDescription.setAttribute('content', data.description);
     } else {

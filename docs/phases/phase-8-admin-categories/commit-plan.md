@@ -20,7 +20,7 @@ git add src/lib/database.types.ts
 git commit -m "chore: update database types"
 ```
 
-**SHA:** _pending_
+**SHA:** 19e1d83d72079692ba6bb1b2c3c4a1cb42ec99e8
 
 ---
 
@@ -37,7 +37,7 @@ git add src/pages/admin/Categorias.tsx src/pages/admin/CategoriaForm.tsx src/App
 git commit -m "feat(admin-categories): add categories CRUD"
 ```
 
-**SHA:** _pending_
+**SHA:** 7cc7ab5c6395470c4a4deb457b4453512edb4ef2
 
 ---
 
@@ -52,7 +52,7 @@ git add e2e/admin-categories.spec.ts
 git commit -m "test(e2e): add admin categories tests"
 ```
 
-**SHA:** _pending_
+**SHA:** 29386325a252c217465caae07b0468b93481a6de
 
 ---
 
@@ -67,22 +67,22 @@ git add docs/phases/phase-8-admin-categories/plan.md
 git commit -m "docs: add phase 8 plan"
 ```
 
-**SHA:** _pending_
+**SHA:** eb40f94d3d9ab9f3fbc965a9337272c00bb74c12
 
 ---
 
 ## Validation
 
-- [ ] All commits executed successfully
-- [ ] All SHA IDs recorded
-- [ ] No secrets committed
+- [x] All commits executed successfully
+- [x] All SHA IDs recorded
+- [x] No secrets committed
 - [x] All tests pass (29/29)
 
 ## Execution Log
 
-| #   | Type  | Scope | Description                     | SHA       | Status    |
-| --- | ----- | ----- | ------------------------------- | --------- | --------- |
-| 1   | chore | db    | update database types | _pending_ | _pending_ |
-| 2   | feat  | admin-categories | add categories CRUD | _pending_ | _pending_ |
-| 3   | test  | e2e   | add admin categories tests | _pending_ | _pending_ |
-| 4   | docs  | phase | add phase 8 plan | _pending_ | _pending_ |
+| #   | Type  | Scope | Description                     | SHA       | Status |
+| --- | ----- | ----- | ------------------------------- | --------- | ------ |
+| 1   | chore | db    | update database types | 19e1d83 | ✅     |
+| 2   | feat  | admin-categories | add categories CRUD | 7cc7ab5 | ✅     |
+| 3   | test  | e2e   | add admin categories tests | 2938632 | ✅     |
+| 4   | docs  | phase | add phase 8 plan | eb40f94 | ✅     |

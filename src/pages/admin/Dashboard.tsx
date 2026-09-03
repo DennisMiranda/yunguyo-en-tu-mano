@@ -1,7 +1,9 @@
+import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../../lib/auth';
 
 export default function Dashboard() {
   const { user, signOut } = useAuth();
+  const navigate = useNavigate();
 
   return (
     <div className="space-y-6">
@@ -15,13 +17,13 @@ export default function Dashboard() {
 
       <div className="flex gap-4">
         <button
-          onClick={() => {}}
+          onClick={() => navigate('/admin/categorias')}
           className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700"
         >
           Categorías
         </button>
         <button
-          onClick={() => {}}
+          onClick={() => navigate('/admin/emprendimientos')}
           className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700"
         >
           Emprendimientos

@@ -306,7 +306,10 @@ export default function App() {
             <Route path={ROUTES.HOME} element={<Inicio />} />
             <Route path={ROUTES.EXPLORAR} element={<Explorar />} />
             <Route path={ROUTES.CATEGORIAS} element={<Categorias />} />
-            <Route path={ROUTES.CATEGORIA_DETALLE} element={<CategoriaDetalle />} />
+            <Route
+              path={ROUTES.CATEGORIA_DETALLE}
+              element={<CategoriaDetalle />}
+            />
             <Route path={ROUTES.NOSOTROS} element={<Nosotros />} />
           </Route>
           <Route path={ROUTES.ADMIN_LOGIN} element={<Login />} />

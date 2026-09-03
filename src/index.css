@@ -1,5 +1,24 @@
 @import 'tailwindcss';
 
+:root {
+  /* Paleta de colores para categorías (asignación cíclica) */
+  --category-color-0: #E91E63; /* Rosa/rojo */
+  --category-color-1: #2196F3; /* Azul */
+  --category-color-2: #FF9800; /* Naranja */
+  --category-color-3: #9C27B0; /* Púrpura */
+  --category-color-4: #4CAF50; /* Verde */
+  --category-color-5: #1A237E; /* Azul oscuro */
+  --category-color-6: #03A9F4; /* Azul claro */
+  
+  /* Colores para el hero */
+  --hero-yellow: #FFB347; /* Naranja claro que resalta */
+  
+  /* Fuentes editoriales */
+  --font-editorial: 'Playfair Display', serif;
+  --font-body: 'Inter', sans-serif;
+}
+
 #root {
   min-height: 100svh;
+  font-family: var(--font-body);
 }

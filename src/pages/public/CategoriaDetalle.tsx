@@ -90,7 +90,7 @@ export default function CategoriaDetalle() {
             to={ROUTES.CATEGORIAS}
             className="mt-4 inline-block text-blue-600 hover:text-blue-700"
           >
-            Volver a categorías
+            Volver
           </Link>
         </div>
       </div>
@@ -107,16 +107,6 @@ export default function CategoriaDetalle() {
           <ChevronRight className="h-4 w-4" />
           <span className="text-gray-900 font-medium">{categoria.nombre}</span>
         </nav>
-
-        {categoria.imagen && (
-          <div className="mb-6">
-            <img
-              src={categoria.imagen}
-              alt={categoria.nombre}
-              className="w-full h-48 md:h-64 object-cover rounded-lg"
-            />
-          </div>
-        )}
 
         <h1 className="text-3xl font-bold text-gray-900 mb-2">
           {categoria.nombre}

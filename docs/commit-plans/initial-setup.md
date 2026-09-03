@@ -12,6 +12,7 @@ Generated: 2026-09-02
 ### Commit 1: chore: initial project setup
 
 **Files:**
+
 - .gitignore
 - .oxlintrc.json
 - package.json
@@ -23,6 +24,7 @@ Generated: 2026-09-02
 - opencode.example.json
 
 **Command:**
+
 ```bash
 git add .gitignore .oxlintrc.json package.json tsconfig.json tsconfig.app.json tsconfig.node.json vite.config.ts index.html opencode.example.json
 git commit -m "chore: initial project setup"
@@ -35,6 +37,7 @@ git commit -m "chore: initial project setup"
 ### Commit 2: feat: add base source code
 
 **Files:**
+
 - src/main.tsx
 - src/App.tsx
 - src/App.css
@@ -45,6 +48,7 @@ git commit -m "chore: initial project setup"
 - public/icons.svg
 
 **Command:**
+
 ```bash
 git add src/main.tsx src/App.tsx src/App.css src/index.css src/assets/react.svg src/assets/vite.svg public/favicon.svg public/icons.svg
 git commit -m "feat: add base source code"
@@ -57,12 +61,14 @@ git commit -m "feat: add base source code"
 ### Commit 3: docs: add project documentation
 
 **Files:**
+
 - AGENTS.md
 - README.md
 - docs/plan.md
 - docs/phases.md
 
 **Command:**
+
 ```bash
 git add AGENTS.md README.md docs/plan.md docs/phases.md
 git commit -m "docs: add project documentation"
@@ -75,11 +81,13 @@ git commit -m "docs: add project documentation"
 ### Commit 4: test: setup playwright e2e testing
 
 **Files:**
+
 - playwright.config.ts
 - e2e/smoke.spec.ts
 - e2e/navigation.spec.ts
 
 **Command:**
+
 ```bash
 git add playwright.config.ts e2e/smoke.spec.ts e2e/navigation.spec.ts
 git commit -m "test: setup playwright e2e testing"
@@ -92,6 +100,7 @@ git commit -m "test: setup playwright e2e testing"
 ### Commit 5: feat: add opencode skills
 
 **Files:**
+
 - .opencode/skills/git-commit/SKILL.md
 - .opencode/skills/learning-book/SKILL.md
 - .opencode/skills/learning-book/LEARNINGS.md
@@ -107,6 +116,7 @@ git commit -m "test: setup playwright e2e testing"
 - .opencode/skills/learning-book/lessons/supabase.md
 
 **Command:**
+
 ```bash
 git add .opencode/skills/git-commit/SKILL.md .opencode/skills/learning-book/SKILL.md .opencode/skills/learning-book/LEARNINGS.md .opencode/skills/learning-book/lessons/architecture.md .opencode/skills/learning-book/lessons/code-quality.md .opencode/skills/learning-book/lessons/github-workflow.md .opencode/skills/learning-book/lessons/implementation-checklist.md .opencode/skills/learning-book/lessons/implementation-preview.md .opencode/skills/learning-book/lessons/patterns.md .opencode/skills/learning-book/lessons/pitfalls.md .opencode/skills/learning-book/lessons/playwright.md .opencode/skills/learning-book/lessons/quick-reference.md .opencode/skills/learning-book/lessons/supabase.md
 git commit -m "feat: add opencode skills"
@@ -119,10 +129,12 @@ git commit -m "feat: add opencode skills"
 ### Commit 6: chore: add prettier config and commit plan
 
 **Files:**
+
 - .prettierrc
 - docs/commit-plans/initial-setup.md
 
 **Command:**
+
 ```bash
 git add .prettierrc docs/commit-plans/initial-setup.md
 git commit -m "chore: add prettier config and commit plan"
@@ -141,11 +153,11 @@ git commit -m "chore: add prettier config and commit plan"
 
 ## Execution Log
 
-| # | Type | Scope | Description | SHA | Status |
-|---|------|-------|-------------|-----|--------|
-| 1 | chore | setup | initial project setup | fbd1958 | ✅ |
-| 2 | feat | source | add base source code | e140709 | ✅ |
-| 3 | docs | project | add project documentation | ec32467 | ✅ |
-| 4 | test | playwright | setup playwright e2e testing | ee3baf3 | ✅ |
-| 5 | feat | skills | add opencode skills | c4b0477 | ✅ |
-| 6 | chore | tooling | add prettier config and commit plan | c5b1d9d | ✅ |
+| #   | Type  | Scope      | Description                         | SHA     | Status |
+| --- | ----- | ---------- | ----------------------------------- | ------- | ------ |
+| 1   | chore | setup      | initial project setup               | fbd1958 | ✅     |
+| 2   | feat  | source     | add base source code                | e140709 | ✅     |
+| 3   | docs  | project    | add project documentation           | ec32467 | ✅     |
+| 4   | test  | playwright | setup playwright e2e testing        | ee3baf3 | ✅     |
+| 5   | feat  | skills     | add opencode skills                 | c4b0477 | ✅     |
+| 6   | chore | tooling    | add prettier config and commit plan | c5b1d9d | ✅     |

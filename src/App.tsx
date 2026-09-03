@@ -4,6 +4,7 @@ import { ROUTES } from './lib/routes';
 import Layout from './components/Layout';
 import Inicio from './pages/public/Inicio';
 import Explorar from './pages/public/Explorar';
+import EmprendimientoDetalle from './pages/public/EmprendimientoDetalle';
 import Categorias from './pages/public/Categorias';
 import CategoriaDetalle from './pages/public/CategoriaDetalle';
 import Nosotros from './pages/public/Nosotros';
@@ -19,6 +20,10 @@ export default function App() {
           <Route element={<Layout />}>
             <Route path={ROUTES.HOME} element={<Inicio />} />
             <Route path={ROUTES.EXPLORAR} element={<Explorar />} />
+            <Route
+              path={ROUTES.EMPRENDIMIENTO_DETALLE}
+              element={<EmprendimientoDetalle />}
+            />
             <Route path={ROUTES.CATEGORIAS} element={<Categorias />} />
             <Route
               path={ROUTES.CATEGORIA_DETALLE}

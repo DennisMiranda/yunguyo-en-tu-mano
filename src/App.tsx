@@ -11,6 +11,8 @@ import Nosotros from './pages/public/Nosotros';
 import Login from './pages/admin/Login';
 import AdminLayout from './pages/admin/Layout';
 import Dashboard from './pages/admin/Dashboard';
+import CategoriasAdmin from './pages/admin/Categorias';
+import CategoriaForm from './pages/admin/CategoriaForm';
 
 export default function App() {
   return (
@@ -34,6 +36,9 @@ export default function App() {
           <Route path={ROUTES.ADMIN_LOGIN} element={<Login />} />
           <Route path={ROUTES.ADMIN} element={<AdminLayout />}>
             <Route index element={<Dashboard />} />
+            <Route path="categorias" element={<CategoriasAdmin />} />
+            <Route path="categorias/nueva" element={<CategoriaForm />} />
+            <Route path="categorias/:id/editar" element={<CategoriaForm />} />
           </Route>
         </Routes>
       </AuthProvider>

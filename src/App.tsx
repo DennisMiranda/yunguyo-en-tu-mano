@@ -15,6 +15,7 @@ import CategoriasAdmin from './pages/admin/Categorias';
 import CategoriaForm from './pages/admin/CategoriaForm';
 import EmprendimientosAdmin from './pages/admin/Emprendimientos';
 import EmprendimientoForm from './pages/admin/EmprendimientoForm';
+import UsuariosAdmin from './pages/admin/Usuarios';
 
 export default function App() {
   return (
@@ -50,6 +51,7 @@ export default function App() {
               path="emprendimientos/:id/editar"
               element={<EmprendimientoForm />}
             />
+            <Route path="usuarios" element={<UsuariosAdmin />} />
           </Route>
         </Routes>
       </AuthProvider>

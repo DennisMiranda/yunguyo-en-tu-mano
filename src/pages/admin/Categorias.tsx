@@ -80,7 +80,7 @@ export default function CategoriasAdmin() {
 
   return (
     <div className="space-y-4">
-      <div className="pb-2 border-b">
+      <div className="pb-2">
         <Link
           to="/admin"
           className="inline-flex items-center gap-2 text-gray-600 hover:text-gray-900"

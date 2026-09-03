@@ -12,12 +12,14 @@ Generated: 2026-09-03
 ### Commit 1: feat(homepage): add hero, categories and about sections
 
 **Files:**
+
 - src/components/Hero.tsx
 - src/components/ListadoCategorias.tsx
 - src/components/SomosYunguyo.tsx
 - src/pages/public/Inicio.tsx
 
 **Command:**
+
 ```bash
 git add src/components/Hero.tsx src/components/ListadoCategorias.tsx src/components/SomosYunguyo.tsx src/pages/public/Inicio.tsx
 git commit -m "feat(homepage): add hero, categories and about sections"
@@ -30,9 +32,11 @@ git commit -m "feat(homepage): add hero, categories and about sections"
 ### Commit 2: test(e2e): add homepage tests
 
 **Files:**
+
 - e2e/homepage.spec.ts
 
 **Command:**
+
 ```bash
 git add e2e/homepage.spec.ts
 git commit -m "test(e2e): add homepage tests"
@@ -45,9 +49,11 @@ git commit -m "test(e2e): add homepage tests"
 ### Commit 3: docs: add phase 4 plan
 
 **Files:**
+
 - docs/phases/phase-4-homepage/plan.md
 
 **Command:**
+
 ```bash
 git add docs/phases/phase-4-homepage/plan.md
 git commit -m "docs: add phase 4 plan"
@@ -66,8 +72,8 @@ git commit -m "docs: add phase 4 plan"
 
 ## Execution Log
 
-| #   | Type  | Scope | Description                     | SHA       | Status |
-| --- | ----- | ----- | ------------------------------- | --------- | ------ |
-| 1   | feat  | homepage | add hero, categories and about sections | 8438776 | ✅     |
-| 2   | test  | e2e   | add homepage tests | 3a784d1 | ✅     |
-| 3   | docs  | phase | add phase 4 plan | 085867a | ✅     |
+| #   | Type | Scope    | Description                             | SHA     | Status |
+| --- | ---- | -------- | --------------------------------------- | ------- | ------ |
+| 1   | feat | homepage | add hero, categories and about sections | 8438776 | ✅     |
+| 2   | test | e2e      | add homepage tests                      | 3a784d1 | ✅     |
+| 3   | docs | phase    | add phase 4 plan                        | 085867a | ✅     |

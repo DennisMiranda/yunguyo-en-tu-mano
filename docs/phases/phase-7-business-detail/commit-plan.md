@@ -22,7 +22,7 @@ git add src/lib/routes.ts src/pages/public/EmprendimientoDetalle.tsx src/App.tsx
 git commit -m "feat(business): add business detail page"
 ```
 
-**SHA:** _pending_
+**SHA:** b2ebf4fadcf249a8125d05cda68819f20de1831c
 
 ---
 
@@ -37,7 +37,7 @@ git add e2e/business-detail.spec.ts
 git commit -m "test(e2e): add business detail tests"
 ```
 
-**SHA:** _pending_
+**SHA:** 2cbf39fe6e572e3c6d1606b99d456e15c91624ca
 
 ---
 
@@ -52,21 +52,21 @@ git add docs/phases/phase-7-business-detail/plan.md
 git commit -m "docs: add phase 7 plan"
 ```
 
-**SHA:** _pending_
+**SHA:** e5b558b202c2f7ca49eb7607c4caf258e78923f1
 
 ---
 
 ## Validation
 
-- [ ] All commits executed successfully
-- [ ] All SHA IDs recorded
-- [ ] No secrets committed
+- [x] All commits executed successfully
+- [x] All SHA IDs recorded
+- [x] No secrets committed
 - [x] All tests pass (27/27)
 
 ## Execution Log
 
-| #   | Type  | Scope | Description                     | SHA       | Status    |
-| --- | ----- | ----- | ------------------------------- | --------- | --------- |
-| 1   | feat  | business | add business detail page | _pending_ | _pending_ |
-| 2   | test  | e2e   | add business detail tests | _pending_ | _pending_ |
-| 3   | docs  | phase | add phase 7 plan | _pending_ | _pending_ |
+| #   | Type  | Scope | Description                     | SHA       | Status |
+| --- | ----- | ----- | ------------------------------- | --------- | ------ |
+| 1   | feat  | business | add business detail page | b2ebf4f | ✅     |
+| 2   | test  | e2e   | add business detail tests | 2cbf39f | ✅     |
+| 3   | docs  | phase | add phase 7 plan | e5b558b | ✅     |

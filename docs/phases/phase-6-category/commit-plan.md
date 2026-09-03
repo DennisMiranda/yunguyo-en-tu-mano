@@ -12,12 +12,14 @@ Generated: 2026-09-03
 ### Commit 1: feat(category): add category detail page and listing
 
 **Files:**
+
 - src/lib/routes.ts
 - src/pages/public/CategoriaDetalle.tsx
 - src/pages/public/Categorias.tsx
 - src/App.tsx
 
 **Command:**
+
 ```bash
 git add src/lib/routes.ts src/pages/public/CategoriaDetalle.tsx src/pages/public/Categorias.tsx src/App.tsx
 git commit -m "feat(category): add category detail page and listing"
@@ -30,9 +32,11 @@ git commit -m "feat(category): add category detail page and listing"
 ### Commit 2: test(e2e): add category page tests
 
 **Files:**
+
 - e2e/category.spec.ts
 
 **Command:**
+
 ```bash
 git add e2e/category.spec.ts
 git commit -m "test(e2e): add category page tests"
@@ -45,9 +49,11 @@ git commit -m "test(e2e): add category page tests"
 ### Commit 3: docs: add phase 6 plan
 
 **Files:**
+
 - docs/phases/phase-6-category/plan.md
 
 **Command:**
+
 ```bash
 git add docs/phases/phase-6-category/plan.md
 git commit -m "docs: add phase 6 plan"
@@ -66,8 +72,8 @@ git commit -m "docs: add phase 6 plan"
 
 ## Execution Log
 
-| #   | Type  | Scope | Description                     | SHA       | Status |
-| --- | ----- | ----- | ------------------------------- | --------- | ------ |
-| 1   | feat  | category | add category detail page and listing | fcdb797 | ✅     |
-| 2   | test  | e2e   | add category page tests | ea8e7e4 | ✅     |
-| 3   | docs  | phase | add phase 6 plan | 204e1b2 | ✅     |
+| #   | Type | Scope    | Description                          | SHA     | Status |
+| --- | ---- | -------- | ------------------------------------ | ------- | ------ |
+| 1   | feat | category | add category detail page and listing | fcdb797 | ✅     |
+| 2   | test | e2e      | add category page tests              | ea8e7e4 | ✅     |
+| 3   | docs | phase    | add phase 6 plan                     | 204e1b2 | ✅     |

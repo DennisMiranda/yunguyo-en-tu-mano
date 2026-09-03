@@ -92,7 +92,7 @@ export default function EmprendimientosAdmin() {
           className="inline-flex items-center gap-2 text-gray-600 hover:text-gray-900"
         >
           <ArrowLeft className="h-5 w-5" />
-          Volver al panel
+          Volver
         </Link>
       </div>
       <div className="flex justify-between items-center">

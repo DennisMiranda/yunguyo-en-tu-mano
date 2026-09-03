@@ -7,6 +7,9 @@ test.describe('Homepage', () => {
 
   test('hero is displayed correctly', async ({ page }) => {
     await expect(page.locator('h1:text("Yunguyo en tu mano")')).toBeVisible();
+  });
+
+  test('search is displayed below hero', async ({ page }) => {
     await expect(
       page.locator('input[placeholder="Buscar emprendimientos..."]')
     ).toBeVisible();

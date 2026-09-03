@@ -79,14 +79,16 @@ export default function CategoriasAdmin() {
   }
 
   return (
-    <div className="space-y-6">
-      <Link
-        to="/admin"
-        className="flex items-center gap-2 text-gray-600 hover:text-gray-900"
-      >
-        <ArrowLeft className="h-5 w-5" />
-        Volver al panel
-      </Link>
+    <div className="space-y-4">
+      <div className="pb-2 border-b">
+        <Link
+          to="/admin"
+          className="inline-flex items-center gap-2 text-gray-600 hover:text-gray-900"
+        >
+          <ArrowLeft className="h-5 w-5" />
+          Volver al panel
+        </Link>
+      </div>
       <div className="flex justify-between items-center">
         <h2 className="text-2xl font-bold text-gray-900">Categorías</h2>
         <Link

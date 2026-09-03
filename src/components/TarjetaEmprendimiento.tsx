@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { ROUTES } from '../lib/routes';
+import yunguyoImg from '../assets/yunguyo.jpg';
 
 interface Emprendimiento {
   id: string;
@@ -27,9 +28,11 @@ export default function TarjetaEmprendimiento({ emprendimiento }: Props) {
           className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
         />
       ) : (
-        <div className="w-full h-48 bg-gradient-to-br from-gray-100 to-gray-200 flex items-center justify-center">
-          <span className="text-4xl">🏪</span>
-        </div>
+        <img
+          src={yunguyoImg}
+          alt={emprendimiento.nombre}
+          className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+        />
       )}
       <div className="p-4">
         {emprendimiento.categorias && (

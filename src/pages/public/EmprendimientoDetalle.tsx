@@ -6,6 +6,7 @@ import { ROUTES } from '../../lib/routes';
 import TarjetaEmprendimiento from '../../components/TarjetaEmprendimiento';
 import { useSEO } from '../../hooks/useSEO';
 import { getSEOForEmprendimiento } from '../../lib/seo';
+import yunguyoImg from '../../assets/yunguyo.jpg';
 
 interface Emprendimiento {
   id: string;
@@ -173,9 +174,11 @@ export default function EmprendimientoDetalle() {
                 className="w-full h-96 object-cover rounded-lg"
               />
             ) : (
-              <div className="w-full h-96 bg-gradient-to-br from-gray-100 to-gray-200 rounded-lg flex items-center justify-center">
-                <span className="text-6xl">🏪</span>
-              </div>
+              <img
+                src={yunguyoImg}
+                alt={emprendimiento.nombre}
+                className="w-full h-96 object-cover rounded-lg"
+              />
             )}
 
             {todasLasImagenes.length > 1 && (

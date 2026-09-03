@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Plus, Pencil, Trash2 } from 'lucide-react';
 import { supabase } from '../../lib/supabase';
+import yunguyoImg from '../../assets/yunguyo.jpg';
 
 interface Categoria {
   id: string;
@@ -122,9 +123,11 @@ export default function CategoriasAdmin() {
                       className="h-12 w-12 rounded object-cover"
                     />
                   ) : (
-                    <div className="h-12 w-12 rounded bg-gray-100 flex items-center justify-center">
-                      📦
-                    </div>
+                    <img
+                      src={yunguyoImg}
+                      alt={categoria.nombre}
+                      className="h-12 w-12 rounded object-cover"
+                    />
                   )}
                 </td>
                 <td className="px-6 py-4 font-medium text-gray-900">

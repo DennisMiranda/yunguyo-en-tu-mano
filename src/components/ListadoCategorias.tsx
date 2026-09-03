@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { supabase } from '../lib/supabase';
 import { ROUTES } from '../lib/routes';
+import yunguyoImg from '../assets/yunguyo.jpg';
 
 interface Categoria {
   id: string;
@@ -77,9 +78,11 @@ export default function ListadoCategorias() {
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                 />
               ) : (
-                <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-blue-100 to-blue-200">
-                  <span className="text-4xl">📦</span>
-                </div>
+                <img
+                  src={yunguyoImg}
+                  alt={categoria.nombre}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                />
               )}
               <div className="absolute inset-0 bg-black/40 flex items-end">
                 <span className="w-full text-center text-white font-medium p-3">

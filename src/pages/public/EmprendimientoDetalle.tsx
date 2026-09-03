@@ -4,6 +4,8 @@ import { ChevronRight, MapPin, Clock, MessageCircle } from 'lucide-react';
 import { supabase } from '../../lib/supabase';
 import { ROUTES } from '../../lib/routes';
 import TarjetaEmprendimiento from '../../components/TarjetaEmprendimiento';
+import { useSEO } from '../../hooks/useSEO';
+import { getSEOForEmprendimiento } from '../../lib/seo';
 
 interface Emprendimiento {
   id: string;
@@ -51,6 +53,15 @@ export default function EmprendimientoDetalle() {
     null
   );
   const [cargando, setCargando] = useState(true);
+
+  useSEO(
+    emprendimiento
+      ? getSEOForEmprendimiento(
+          emprendimiento.nombre,
+          emprendimiento.categorias?.nombre || ''
+        )
+      : { title: 'Emprendimiento | Yunguyo en tu mano', description: 'Cargando...' }
+  );
 
   useEffect(() => {
     const cargarDatos = async () => {

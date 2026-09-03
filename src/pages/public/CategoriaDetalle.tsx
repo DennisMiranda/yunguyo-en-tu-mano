@@ -4,6 +4,8 @@ import { ChevronRight } from 'lucide-react';
 import { supabase } from '../../lib/supabase';
 import { ROUTES } from '../../lib/routes';
 import TarjetaEmprendimiento from '../../components/TarjetaEmprendimiento';
+import { useSEO } from '../../hooks/useSEO';
+import { getSEOForCategoria } from '../../lib/seo';
 
 interface Categoria {
   id: string;
@@ -26,6 +28,8 @@ export default function CategoriaDetalle() {
   const [categoria, setCategoria] = useState<Categoria | null>(null);
   const [emprendimientos, setEmprendimientos] = useState<Emprendimiento[]>([]);
   const [cargando, setCargando] = useState(true);
+
+  useSEO(categoria ? getSEOForCategoria(categoria.nombre) : { title: 'Categoría | Yunguyo en tu mano', description: 'Cargando...' });
 
   useEffect(() => {
     const cargarDatos = async () => {

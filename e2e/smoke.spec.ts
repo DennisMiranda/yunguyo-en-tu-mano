@@ -10,4 +10,17 @@ test.describe('Smoke', () => {
     const response = await request.get('/');
     expect(response.status()).toBe(200);
   });
+
+  test('full flow: homepage → explorar → category → detail', async ({
+    page,
+  }) => {
+    await page.goto('/');
+    await expect(page.locator('h1:text("Yunguyo en tu mano")')).toBeVisible();
+
+    await page.click('a[href="/explorar"]');
+    await expect(page).toHaveURL(/\/explorar/);
+
+    await page.click('a[href="/categorias"]');
+    await expect(page).toHaveURL(/\/categorias/);
+  });
 });

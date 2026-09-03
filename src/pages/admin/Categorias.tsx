@@ -116,7 +116,7 @@ export default function CategoriasAdmin() {
             {categorias.map((categoria) => (
               <tr key={categoria.id}>
                 <td className="px-6 py-4">
-                  {categoria.imagen ? (
+                  {categoria.imagen && categoria.imagen.startsWith('http') ? (
                     <img
                       src={categoria.imagen}
                       alt={categoria.nombre}

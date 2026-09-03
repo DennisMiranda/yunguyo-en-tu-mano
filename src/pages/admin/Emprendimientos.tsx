@@ -113,7 +113,7 @@ export default function EmprendimientosAdmin() {
             {emprendimientos.map((emprendimiento) => (
               <tr key={emprendimiento.id}>
                 <td className="px-6 py-4">
-                  {emprendimiento.imagen_principal ? (
+                  {emprendimiento.imagen_principal && emprendimiento.imagen_principal.startsWith('http') ? (
                     <img
                       src={emprendimiento.imagen_principal}
                       alt={emprendimiento.nombre}

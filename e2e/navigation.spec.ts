@@ -41,7 +41,7 @@ test.describe('Navigation', () => {
 
   test('click on logo navigates to home', async ({ page }) => {
     await page.goto('/explorar');
-    await page.click('header a:text("Yunguyo")');
+    await page.click('header a img[alt="Yunguyo en tu mano"]');
     await expect(page).toHaveURL('/');
   });
 

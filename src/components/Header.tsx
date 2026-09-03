@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 import { ROUTES } from '../lib/routes';
+import logo from '../assets/logo.png';
 
 const NAV_LINKS = [
   { label: 'Explorar', href: ROUTES.EXPLORAR },
@@ -17,8 +18,8 @@ export default function Header() {
     <header className="bg-white border-b border-gray-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
-          <Link to={ROUTES.HOME} className="text-xl font-bold text-gray-900">
-            Yunguyo
+          <Link to={ROUTES.HOME} className="flex items-center gap-2">
+            <img src={logo} alt="Yunguyo en tu mano" className="h-10 w-auto" />
           </Link>
 
           <nav className="hidden md:flex space-x-8">

@@ -23,7 +23,7 @@ git add src/components/Hero.tsx src/components/ListadoCategorias.tsx src/compone
 git commit -m "feat(homepage): add hero, categories and about sections"
 ```
 
-**SHA:** _pending_
+**SHA:** 843877679d16e1f9cd5d37e53c1b0dd0342328cf
 
 ---
 
@@ -38,7 +38,7 @@ git add e2e/homepage.spec.ts
 git commit -m "test(e2e): add homepage tests"
 ```
 
-**SHA:** _pending_
+**SHA:** 3a784d1bca9af68792b818431f974da009c0a529
 
 ---
 
@@ -53,21 +53,21 @@ git add docs/phases/phase-4-homepage/plan.md
 git commit -m "docs: add phase 4 plan"
 ```
 
-**SHA:** _pending_
+**SHA:** 085867aa205e6450ae32606fabee81814f917a1e
 
 ---
 
 ## Validation
 
-- [ ] All commits executed successfully
-- [ ] All SHA IDs recorded
-- [ ] No secrets committed
+- [x] All commits executed successfully
+- [x] All SHA IDs recorded
+- [x] No secrets committed
 - [x] All tests pass (17/17)
 
 ## Execution Log
 
-| #   | Type  | Scope | Description                     | SHA       | Status    |
-| --- | ----- | ----- | ------------------------------- | --------- | --------- |
-| 1   | feat  | homepage | add hero, categories and about sections | _pending_ | _pending_ |
-| 2   | test  | e2e   | add homepage tests | _pending_ | _pending_ |
-| 3   | docs  | phase | add phase 4 plan | _pending_ | _pending_ |
+| #   | Type  | Scope | Description                     | SHA       | Status |
+| --- | ----- | ----- | ------------------------------- | --------- | ------ |
+| 1   | feat  | homepage | add hero, categories and about sections | 8438776 | ✅     |
+| 2   | test  | e2e   | add homepage tests | 3a784d1 | ✅     |
+| 3   | docs  | phase | add phase 4 plan | 085867a | ✅     |

@@ -21,7 +21,7 @@ git add package.json bun.lock
 git commit -m "build: add lucide-react"
 ```
 
-**SHA:** _pending_
+**SHA:** 28f7bea3aac2189e1ddd0bdaf11105a9544adf05
 
 ---
 
@@ -38,7 +38,7 @@ git add src/components/Header.tsx src/components/Footer.tsx src/components/Layou
 git commit -m "feat(layout): add header, footer and public layout"
 ```
 
-**SHA:** _pending_
+**SHA:** f7f176f328d015511dd72b256afd4dc14fee81b0
 
 ---
 
@@ -57,7 +57,7 @@ git add src/pages/public/Inicio.tsx src/pages/public/Explorar.tsx src/pages/publ
 git commit -m "feat(pages): add public page placeholders"
 ```
 
-**SHA:** _pending_
+**SHA:** 19153d0142728306faa96b018a7aa26afdcaec24
 
 ---
 
@@ -72,7 +72,7 @@ git add e2e/navigation.spec.ts
 git commit -m "test(e2e): add header and navigation tests"
 ```
 
-**SHA:** _pending_
+**SHA:** ff039596976cdd1e3bb369ae173171259dc2bacc
 
 ---
 
@@ -88,23 +88,23 @@ git add docs/phases/phase-3-navigation/plan.md docs/phases/phase-3-navigation/co
 git commit -m "docs: add phase 3 plan and commit plan"
 ```
 
-**SHA:** _pending_
+**SHA:** 3c8e005c8073a93ff21a86a35c902a329fb01348
 
 ---
 
 ## Validation
 
-- [ ] All commits executed successfully
-- [ ] All SHA IDs recorded
-- [ ] No secrets committed
+- [x] All commits executed successfully
+- [x] All SHA IDs recorded
+- [x] No secrets committed
 - [x] All tests pass (13/13)
 
 ## Execution Log
 
-| #   | Type  | Scope | Description                     | SHA       | Status    |
-| --- | ----- | ----- | ------------------------------- | --------- | --------- |
-| 1   | build | deps  | add lucide-react | _pending_ | _pending_ |
-| 2   | feat  | layout | add header, footer and public layout | _pending_ | _pending_ |
-| 3   | feat  | pages | add public page placeholders | _pending_ | _pending_ |
-| 4   | test  | e2e   | add header and navigation tests | _pending_ | _pending_ |
-| 5   | docs  | phase | add phase 3 plan and commit plan | _pending_ | _pending_ |
+| #   | Type  | Scope | Description                     | SHA       | Status |
+| --- | ----- | ----- | ------------------------------- | --------- | ------ |
+| 1   | build | deps  | add lucide-react | 28f7bea | ✅     |
+| 2   | feat  | layout | add header, footer and public layout | f7f176f | ✅     |
+| 3   | feat  | pages | add public page placeholders | 19153d0 | ✅     |
+| 4   | test  | e2e   | add header and navigation tests | ff03959 | ✅     |
+| 5   | docs  | phase | add phase 3 plan and commit plan | 3c8e005 | ✅     |

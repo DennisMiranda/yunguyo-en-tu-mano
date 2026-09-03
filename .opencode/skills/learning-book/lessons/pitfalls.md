@@ -29,3 +29,17 @@
 - **Cause:** Syntax errors, improper escaping
 - **Prevention:** Use IDE JSON validation, copy-paste verified JSON
 - **Date:** 2026-09-02
+
+### Running Dev/Preview Servers
+
+- **Mistake:** Running `bun run dev` or `bun run preview` in background
+- **Cause:** Slows down tests, causes port conflicts, user runs these manually
+- **Fix:** Only run `bun run build` to check errors. Assume preview server is running for tests.
+- **Date:** 2026-09-03
+
+### Hardcoding Tokens in Tests
+
+- **Mistake:** Hardcoding API keys/tokens directly in test files
+- **Cause:** Security risk, tokens exposed in git history
+- **Fix:** Use `process.env.VARIABLE_NAME` and `test.skip()` when not configured
+- **Date:** 2026-09-03

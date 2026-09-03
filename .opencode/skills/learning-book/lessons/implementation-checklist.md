@@ -36,11 +36,44 @@
 ## Implementation Process
 
 1. **PREVIEW** - Show implementation plan and ask clarifying questions
-2. **READ** - lessons/implementation-checklist.md
-3. **RESEARCH** - existing codebase patterns
-4. **VERIFY** - compliance with all rules
-5. **IMPLEMENT** - following established patterns exactly
-6. **TEST** - format, type-check, test
+2. **AUDIT** - Verify plan follows all lessons before presenting to user
+3. **READ** - lessons/implementation-checklist.md
+4. **RESEARCH** - existing codebase patterns
+5. **VERIFY** - compliance with all rules
+6. **IMPLEMENT** - following established patterns exactly
+7. **TEST** - format, type-check, test
+
+## Plan Audit (MANDATORY)
+
+**Before presenting a plan to the user, always audit it against the learning book:**
+
+### Audit Checklist
+
+- [ ] **Read relevant lessons** — Check `lessons/` for applicable rules
+- [ ] **Object-based constants** — No string literals for routes, statuses, types
+- [ ] **Spanish naming** — Variables, functions, components in Spanish (project-specific)
+- [ ] **Architecture compliance** — Follow `src/pages/`, `src/lib/`, `src/components/` structure
+- [ ] **Tailwind only** — No custom CSS unless necessary
+- [ ] **File naming** — PascalCase for components, camelCase for functions
+- [ ] **No secrets** — Never include credentials in plans
+
+### How to Audit
+
+1. List all lessons in `lessons/`
+2. For each lesson, check if the plan violates any rule
+3. If violation found, fix the plan before presenting
+4. Add "Lessons to Follow" section in plan with relevant lesson files
+
+### Example
+
+```markdown
+## Lessons to Follow
+
+Before implementing, review these lessons:
+
+- `.opencode/skills/learning-book/lessons/patterns.md` — Object-based constants
+- `.opencode/skills/learning-book/lessons/code-quality.md` — Spanish naming
+```
 
 ## Phase 4 Planning - Critical Lessons Integration
 

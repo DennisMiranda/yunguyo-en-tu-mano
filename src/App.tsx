@@ -13,6 +13,8 @@ import AdminLayout from './pages/admin/Layout';
 import Dashboard from './pages/admin/Dashboard';
 import CategoriasAdmin from './pages/admin/Categorias';
 import CategoriaForm from './pages/admin/CategoriaForm';
+import EmprendimientosAdmin from './pages/admin/Emprendimientos';
+import EmprendimientoForm from './pages/admin/EmprendimientoForm';
 
 export default function App() {
   return (
@@ -39,6 +41,15 @@ export default function App() {
             <Route path="categorias" element={<CategoriasAdmin />} />
             <Route path="categorias/nueva" element={<CategoriaForm />} />
             <Route path="categorias/:id/editar" element={<CategoriaForm />} />
+            <Route path="emprendimientos" element={<EmprendimientosAdmin />} />
+            <Route
+              path="emprendimientos/nuevo"
+              element={<EmprendimientoForm />}
+            />
+            <Route
+              path="emprendimientos/:id/editar"
+              element={<EmprendimientoForm />}
+            />
           </Route>
         </Routes>
       </AuthProvider>

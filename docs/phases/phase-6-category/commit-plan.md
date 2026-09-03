@@ -23,7 +23,7 @@ git add src/lib/routes.ts src/pages/public/CategoriaDetalle.tsx src/pages/public
 git commit -m "feat(category): add category detail page and listing"
 ```
 
-**SHA:** _pending_
+**SHA:** fcdb7973dab1e68ea205f28b45fdda16a7e1b05f
 
 ---
 
@@ -38,7 +38,7 @@ git add e2e/category.spec.ts
 git commit -m "test(e2e): add category page tests"
 ```
 
-**SHA:** _pending_
+**SHA:** ea8e7e407478f16818b07264b9876b5e76e8d385
 
 ---
 
@@ -53,21 +53,21 @@ git add docs/phases/phase-6-category/plan.md
 git commit -m "docs: add phase 6 plan"
 ```
 
-**SHA:** _pending_
+**SHA:** 204e1b2478d60f7e472514cda5297cb4a5dc6651
 
 ---
 
 ## Validation
 
-- [ ] All commits executed successfully
-- [ ] All SHA IDs recorded
-- [ ] No secrets committed
+- [x] All commits executed successfully
+- [x] All SHA IDs recorded
+- [x] No secrets committed
 - [x] All tests pass (24/24)
 
 ## Execution Log
 
-| #   | Type  | Scope | Description                     | SHA       | Status    |
-| --- | ----- | ----- | ------------------------------- | --------- | --------- |
-| 1   | feat  | category | add category detail page and listing | _pending_ | _pending_ |
-| 2   | test  | e2e   | add category page tests | _pending_ | _pending_ |
-| 3   | docs  | phase | add phase 6 plan | _pending_ | _pending_ |
+| #   | Type  | Scope | Description                     | SHA       | Status |
+| --- | ----- | ----- | ------------------------------- | --------- | ------ |
+| 1   | feat  | category | add category detail page and listing | fcdb797 | ✅     |
+| 2   | test  | e2e   | add category page tests | ea8e7e4 | ✅     |
+| 3   | docs  | phase | add phase 6 plan | 204e1b2 | ✅     |

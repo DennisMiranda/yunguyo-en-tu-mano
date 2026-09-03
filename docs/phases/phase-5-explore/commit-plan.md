@@ -12,11 +12,13 @@ Generated: 2026-09-03
 ### Commit 1: feat(explore): add search, filters and business cards
 
 **Files:**
+
 - src/components/TarjetaEmprendimiento.tsx
 - src/components/FiltrosCategorias.tsx
 - src/pages/public/Explorar.tsx
 
 **Command:**
+
 ```bash
 git add src/components/TarjetaEmprendimiento.tsx src/components/FiltrosCategorias.tsx src/pages/public/Explorar.tsx
 git commit -m "feat(explore): add search, filters and business cards"
@@ -29,9 +31,11 @@ git commit -m "feat(explore): add search, filters and business cards"
 ### Commit 2: test(e2e): add explore page tests
 
 **Files:**
+
 - e2e/explore.spec.ts
 
 **Command:**
+
 ```bash
 git add e2e/explore.spec.ts
 git commit -m "test(e2e): add explore page tests"
@@ -44,9 +48,11 @@ git commit -m "test(e2e): add explore page tests"
 ### Commit 3: docs: add phase 5 plan
 
 **Files:**
+
 - docs/phases/phase-5-explore/plan.md
 
 **Command:**
+
 ```bash
 git add docs/phases/phase-5-explore/plan.md
 git commit -m "docs: add phase 5 plan"
@@ -65,8 +71,8 @@ git commit -m "docs: add phase 5 plan"
 
 ## Execution Log
 
-| #   | Type  | Scope | Description                     | SHA       | Status |
-| --- | ----- | ----- | ------------------------------- | --------- | ------ |
-| 1   | feat  | explore | add search, filters and business cards | 828583a | ✅     |
-| 2   | test  | e2e   | add explore page tests | c301e1f | ✅     |
-| 3   | docs  | phase | add phase 5 plan | 475979f | ✅     |
+| #   | Type | Scope   | Description                            | SHA     | Status |
+| --- | ---- | ------- | -------------------------------------- | ------- | ------ |
+| 1   | feat | explore | add search, filters and business cards | 828583a | ✅     |
+| 2   | test | e2e     | add explore page tests                 | c301e1f | ✅     |
+| 3   | docs | phase   | add phase 5 plan                       | 475979f | ✅     |

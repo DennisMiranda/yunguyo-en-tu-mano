@@ -12,9 +12,11 @@ Generated: 2026-09-03
 ### Commit 1: chore: update database types
 
 **Files:**
+
 - src/lib/database.types.ts
 
 **Command:**
+
 ```bash
 git add src/lib/database.types.ts
 git commit -m "chore: update database types"
@@ -27,11 +29,13 @@ git commit -m "chore: update database types"
 ### Commit 2: feat(admin-categories): add categories CRUD
 
 **Files:**
+
 - src/pages/admin/Categorias.tsx
 - src/pages/admin/CategoriaForm.tsx
 - src/App.tsx
 
 **Command:**
+
 ```bash
 git add src/pages/admin/Categorias.tsx src/pages/admin/CategoriaForm.tsx src/App.tsx
 git commit -m "feat(admin-categories): add categories CRUD"
@@ -44,9 +48,11 @@ git commit -m "feat(admin-categories): add categories CRUD"
 ### Commit 3: test(e2e): add admin categories tests
 
 **Files:**
+
 - e2e/admin-categories.spec.ts
 
 **Command:**
+
 ```bash
 git add e2e/admin-categories.spec.ts
 git commit -m "test(e2e): add admin categories tests"
@@ -59,9 +65,11 @@ git commit -m "test(e2e): add admin categories tests"
 ### Commit 4: docs: add phase 8 plan
 
 **Files:**
+
 - docs/phases/phase-8-admin-categories/plan.md
 
 **Command:**
+
 ```bash
 git add docs/phases/phase-8-admin-categories/plan.md
 git commit -m "docs: add phase 8 plan"
@@ -80,9 +88,9 @@ git commit -m "docs: add phase 8 plan"
 
 ## Execution Log
 
-| #   | Type  | Scope | Description                     | SHA       | Status |
-| --- | ----- | ----- | ------------------------------- | --------- | ------ |
-| 1   | chore | db    | update database types | 19e1d83 | ✅     |
-| 2   | feat  | admin-categories | add categories CRUD | 7cc7ab5 | ✅     |
-| 3   | test  | e2e   | add admin categories tests | 2938632 | ✅     |
-| 4   | docs  | phase | add phase 8 plan | eb40f94 | ✅     |
+| #   | Type  | Scope            | Description                | SHA     | Status |
+| --- | ----- | ---------------- | -------------------------- | ------- | ------ |
+| 1   | chore | db               | update database types      | 19e1d83 | ✅     |
+| 2   | feat  | admin-categories | add categories CRUD        | 7cc7ab5 | ✅     |
+| 3   | test  | e2e              | add admin categories tests | 2938632 | ✅     |
+| 4   | docs  | phase            | add phase 8 plan           | eb40f94 | ✅     |

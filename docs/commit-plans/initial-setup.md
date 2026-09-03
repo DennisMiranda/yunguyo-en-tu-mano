@@ -28,7 +28,7 @@ git add .gitignore .oxlintrc.json package.json tsconfig.json tsconfig.app.json t
 git commit -m "chore: initial project setup"
 ```
 
-**SHA:** _pending_
+**SHA:** fbd1958
 
 ---
 
@@ -50,7 +50,7 @@ git add src/main.tsx src/App.tsx src/App.css src/index.css src/assets/react.svg 
 git commit -m "feat: add base source code"
 ```
 
-**SHA:** _pending_
+**SHA:** e140709
 
 ---
 
@@ -68,7 +68,7 @@ git add AGENTS.md README.md docs/plan.md docs/phases.md
 git commit -m "docs: add project documentation"
 ```
 
-**SHA:** _pending_
+**SHA:** ec32467
 
 ---
 
@@ -85,7 +85,7 @@ git add playwright.config.ts e2e/smoke.spec.ts e2e/navigation.spec.ts
 git commit -m "test: setup playwright e2e testing"
 ```
 
-**SHA:** _pending_
+**SHA:** ee3baf3
 
 ---
 
@@ -112,7 +112,7 @@ git add .opencode/skills/git-commit/SKILL.md .opencode/skills/learning-book/SKIL
 git commit -m "feat: add opencode skills"
 ```
 
-**SHA:** _pending_
+**SHA:** c4b0477
 
 ---
 
@@ -128,24 +128,24 @@ git add .prettierrc docs/commit-plans/initial-setup.md
 git commit -m "chore: add prettier config and commit plan"
 ```
 
-**SHA:** _pending_
+**SHA:** c5b1d9d
 
 ---
 
 ## Validation
 
-- [ ] All commits executed successfully
-- [ ] All SHA IDs recorded
-- [ ] No secrets committed
-- [ ] All tests pass (if applicable)
+- [x] All commits executed successfully
+- [x] All SHA IDs recorded
+- [x] No secrets committed
+- [x] All tests pass (if applicable)
 
 ## Execution Log
 
 | # | Type | Scope | Description | SHA | Status |
 |---|------|-------|-------------|-----|--------|
-| 1 | chore | setup | initial project setup | _pending_ | _pending_ |
-| 2 | feat | source | add base source code | _pending_ | _pending_ |
-| 3 | docs | project | add project documentation | _pending_ | _pending_ |
-| 4 | test | playwright | setup playwright e2e testing | _pending_ | _pending_ |
-| 5 | feat | skills | add opencode skills | _pending_ | _pending_ |
-| 6 | chore | tooling | add prettier config and commit plan | _pending_ | _pending_ |
+| 1 | chore | setup | initial project setup | fbd1958 | ✅ |
+| 2 | feat | source | add base source code | e140709 | ✅ |
+| 3 | docs | project | add project documentation | ec32467 | ✅ |
+| 4 | test | playwright | setup playwright e2e testing | ee3baf3 | ✅ |
+| 5 | feat | skills | add opencode skills | c4b0477 | ✅ |
+| 6 | chore | tooling | add prettier config and commit plan | c5b1d9d | ✅ |

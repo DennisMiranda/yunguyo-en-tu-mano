@@ -12,11 +12,13 @@ Generated: 2026-09-03
 ### Commit 1: feat(admin-businesses): add businesses CRUD
 
 **Files:**
+
 - src/pages/admin/Emprendimientos.tsx
 - src/pages/admin/EmprendimientoForm.tsx
 - src/App.tsx
 
 **Command:**
+
 ```bash
 git add src/pages/admin/Emprendimientos.tsx src/pages/admin/EmprendimientoForm.tsx src/App.tsx
 git commit -m "feat(admin-businesses): add businesses CRUD"
@@ -29,9 +31,11 @@ git commit -m "feat(admin-businesses): add businesses CRUD"
 ### Commit 2: test(e2e): add admin businesses tests
 
 **Files:**
+
 - e2e/admin-businesses.spec.ts
 
 **Command:**
+
 ```bash
 git add e2e/admin-businesses.spec.ts
 git commit -m "test(e2e): add admin businesses tests"
@@ -44,9 +48,11 @@ git commit -m "test(e2e): add admin businesses tests"
 ### Commit 3: docs: add phase 9 plan
 
 **Files:**
+
 - docs/phases/phase-9-admin-businesses/plan.md
 
 **Command:**
+
 ```bash
 git add docs/phases/phase-9-admin-businesses/plan.md
 git commit -m "docs: add phase 9 plan"
@@ -65,8 +71,8 @@ git commit -m "docs: add phase 9 plan"
 
 ## Execution Log
 
-| #   | Type  | Scope | Description                     | SHA       | Status |
-| --- | ----- | ----- | ------------------------------- | --------- | ------ |
-| 1   | feat  | admin-businesses | add businesses CRUD | 6ce1318 | ✅     |
-| 2   | test  | e2e   | add admin businesses tests | 6dfa1fe | ✅     |
-| 3   | docs  | phase | add phase 9 plan | 69236bc | ✅     |
+| #   | Type | Scope            | Description                | SHA     | Status |
+| --- | ---- | ---------------- | -------------------------- | ------- | ------ |
+| 1   | feat | admin-businesses | add businesses CRUD        | 6ce1318 | ✅     |
+| 2   | test | e2e              | add admin businesses tests | 6dfa1fe | ✅     |
+| 3   | docs | phase            | add phase 9 plan           | 69236bc | ✅     |

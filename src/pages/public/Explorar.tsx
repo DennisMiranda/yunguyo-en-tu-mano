@@ -4,6 +4,8 @@ import { Search, X } from 'lucide-react';
 import { supabase } from '../../lib/supabase';
 import TarjetaEmprendimiento from '../../components/TarjetaEmprendimiento';
 import FiltrosCategorias from '../../components/FiltrosCategorias';
+import { useSEO } from '../../hooks/useSEO';
+import { SEO } from '../../lib/seo';
 
 interface Categoria {
   id: string;
@@ -26,6 +28,8 @@ export default function Explorar() {
   const [categorias, setCategorias] = useState<Categoria[]>([]);
   const [cargando, setCargando] = useState(true);
   const [busqueda, setBusqueda] = useState(searchParams.get('q') || '');
+
+  useSEO(SEO.explorar);
 
   const categoriaSeleccionada = searchParams.get('categoria');
 

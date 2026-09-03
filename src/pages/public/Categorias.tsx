@@ -2,6 +2,8 @@ import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { supabase } from '../../lib/supabase';
 import { ROUTES } from '../../lib/routes';
+import { useSEO } from '../../hooks/useSEO';
+import { SEO } from '../../lib/seo';
 
 interface Categoria {
   id: string;
@@ -13,6 +15,8 @@ interface Categoria {
 export default function Categorias() {
   const [categorias, setCategorias] = useState<Categoria[]>([]);
   const [cargando, setCargando] = useState(true);
+
+  useSEO(SEO.categorias);
 
   useEffect(() => {
     const cargarCategorias = async () => {

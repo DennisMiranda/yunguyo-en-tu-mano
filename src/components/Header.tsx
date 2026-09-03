@@ -7,7 +7,7 @@ import logo from '../assets/logo.png';
 const NAV_LINKS = [
   { label: 'Explorar', href: ROUTES.EXPLORAR },
   { label: 'Categorías', href: ROUTES.CATEGORIAS },
-  { label: 'Nosotros', href: ROUTES.NOSOTROS },
+
 ] as const;
 
 export default function Header() {

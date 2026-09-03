@@ -22,11 +22,7 @@ export const SEO: Record<string, SEOData> = {
     description:
       'Descubre las categorías de emprendimientos disponibles en Yunguyo.',
   },
-  nosotros: {
-    title: `Nosotros | ${BASE_TITLE}`,
-    description:
-      'Conoce más sobre Yunguyo en tu mano, el directorio digital de emprendimientos locales.',
-  },
+
 };
 
 export function getSEOForCategoria(nombre: string): SEOData {

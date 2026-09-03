@@ -4,7 +4,6 @@ export const ROUTES = {
   EMPRENDIMIENTO_DETALLE: '/explorar/:slug',
   CATEGORIAS: '/categorias',
   CATEGORIA_DETALLE: '/categorias/:slug',
-  NOSOTROS: '/nosotros',
   ADMIN_LOGIN: '/admin/login',
   ADMIN: '/admin',
   ADMIN_CATEGORIAS: '/admin/categorias',

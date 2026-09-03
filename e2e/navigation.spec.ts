@@ -16,7 +16,7 @@ test.describe('Navigation', () => {
   });
 
   test('has expected routes defined in plan', async ({ page }) => {
-    const routes = ['/', '/explorar', '/categorias', '/nosotros'];
+    const routes = ['/', '/explorar', '/categorias'];
     for (const route of routes) {
       const response = await page.goto(route);
       expect(response?.status()).toBeLessThan(500);
@@ -26,7 +26,7 @@ test.describe('Navigation', () => {
   test('header shows all links on desktop', async ({ page }) => {
     await page.setViewportSize({ width: 1024, height: 768 });
     const header = page.locator('header');
-    await expect(header.locator('nav a')).toHaveCount(3);
+    await expect(header.locator('nav a')).toHaveCount(2);
   });
 
   test('hamburger menu opens and closes on mobile', async ({ page }) => {
@@ -35,7 +35,7 @@ test.describe('Navigation', () => {
     await expect(botonMenu).toBeVisible();
     await botonMenu.click();
     const header = page.locator('header');
-    await expect(header.locator('nav a')).toHaveCount(3);
+    await expect(header.locator('nav a')).toHaveCount(2);
     await botonMenu.click();
   });
 
@@ -51,7 +51,5 @@ test.describe('Navigation', () => {
     await expect(page).toHaveURL('/explorar');
     await header.locator('nav a:text("Categorías")').click();
     await expect(page).toHaveURL('/categorias');
-    await header.locator('nav a:text("Nosotros")').click();
-    await expect(page).toHaveURL('/nosotros');
   });
 });

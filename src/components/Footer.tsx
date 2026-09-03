@@ -20,12 +20,7 @@ export default function Footer() {
             >
               Categorías
             </Link>
-            <Link
-              to={ROUTES.NOSOTROS}
-              className="text-sm text-gray-600 hover:text-gray-900"
-            >
-              Nosotros
-            </Link>
+
           </nav>
         </div>
       </div>

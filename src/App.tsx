@@ -7,7 +7,6 @@ import Explorar from './pages/public/Explorar';
 import EmprendimientoDetalle from './pages/public/EmprendimientoDetalle';
 import Categorias from './pages/public/Categorias';
 import CategoriaDetalle from './pages/public/CategoriaDetalle';
-import Nosotros from './pages/public/Nosotros';
 import Login from './pages/admin/Login';
 import AdminLayout from './pages/admin/Layout';
 import Dashboard from './pages/admin/Dashboard';
@@ -34,7 +33,7 @@ export default function App() {
               path={ROUTES.CATEGORIA_DETALLE}
               element={<CategoriaDetalle />}
             />
-            <Route path={ROUTES.NOSOTROS} element={<Nosotros />} />
+
           </Route>
           <Route path={ROUTES.ADMIN_LOGIN} element={<Login />} />
           <Route path={ROUTES.ADMIN} element={<AdminLayout />}>

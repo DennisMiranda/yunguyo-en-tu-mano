@@ -2,6 +2,7 @@ export const ROUTES = {
   HOME: '/',
   EXPLORAR: '/explorar',
   CATEGORIAS: '/categorias',
+  CATEGORIA_DETALLE: '/categorias/:slug',
   NOSOTROS: '/nosotros',
   ADMIN_LOGIN: '/admin/login',
   ADMIN: '/admin',

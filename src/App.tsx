@@ -5,6 +5,7 @@ import Layout from './components/Layout';
 import Inicio from './pages/public/Inicio';
 import Explorar from './pages/public/Explorar';
 import Categorias from './pages/public/Categorias';
+import CategoriaDetalle from './pages/public/CategoriaDetalle';
 import Nosotros from './pages/public/Nosotros';
 import Login from './pages/admin/Login';
 import AdminLayout from './pages/admin/Layout';
@@ -19,6 +20,10 @@ export default function App() {
             <Route path={ROUTES.HOME} element={<Inicio />} />
             <Route path={ROUTES.EXPLORAR} element={<Explorar />} />
             <Route path={ROUTES.CATEGORIAS} element={<Categorias />} />
+            <Route
+              path={ROUTES.CATEGORIA_DETALLE}
+              element={<CategoriaDetalle />}
+            />
             <Route path={ROUTES.NOSOTROS} element={<Nosotros />} />
           </Route>
           <Route path={ROUTES.ADMIN_LOGIN} element={<Login />} />

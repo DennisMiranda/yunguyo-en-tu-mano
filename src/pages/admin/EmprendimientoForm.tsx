@@ -88,7 +88,14 @@ export default function EmprendimientoForm() {
           setImagenExistente(data.imagen_principal);
           setGaleriaExistente(data.galeria || []);
           if (data.horario && typeof data.horario === 'object') {
-            setHorario(data.horario as unknown as Record<string, HorarioDia>);
+            const horarioLimpio: Record<string, HorarioDia> = {};
+            const raw = data.horario as Record<string, HorarioDia>;
+            for (const dia of DIAS_SEMANA) {
+              if (raw[dia]?.activo) {
+                horarioLimpio[dia] = raw[dia];
+              }
+            }
+            setHorario(horarioLimpio);
           }
         }
         setCargando(false);
@@ -247,7 +254,7 @@ export default function EmprendimientoForm() {
           className="inline-flex items-center gap-2 text-gray-600 hover:text-gray-900"
         >
           <ArrowLeft className="h-5 w-5" />
-          Volver al panel
+          Volver
         </button>
       </div>
       <h2 className="text-2xl font-bold text-gray-900 mb-6">

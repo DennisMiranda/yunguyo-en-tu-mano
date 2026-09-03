@@ -129,7 +129,7 @@ export default function EmprendimientoDetalle() {
             to={ROUTES.EXPLORAR}
             className="mt-4 inline-block text-blue-600 hover:text-blue-700"
           >
-            Volver a explorar
+            Volver
           </Link>
         </div>
       </div>
@@ -232,7 +232,7 @@ export default function EmprendimientoDetalle() {
                       <div key={dia} className="flex justify-between">
                         <span className="capitalize text-gray-600">{dia}</span>
                         <span className="text-gray-900">
-                          {horario
+                          {horario?.activo
                             ? `${horario.abre} - ${horario.cierra}`
                             : 'Cerrado'}
                         </span>

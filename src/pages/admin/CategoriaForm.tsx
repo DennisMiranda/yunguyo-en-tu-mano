@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { Upload, X } from 'lucide-react';
 import { supabase } from '../../lib/supabase';
+import yunguyoImg from '../../assets/yunguyo.jpg';
 
 export default function CategoriaForm() {
   const { id } = useParams<{ id: string }>();
@@ -174,7 +175,7 @@ export default function CategoriaForm() {
             {(imagen || imagenExistente) && (
               <div className="relative">
                 <img
-                  src={imagen ? URL.createObjectURL(imagen) : imagenExistente!}
+                  src={imagen ? URL.createObjectURL(imagen) : (imagenExistente!.startsWith('http') ? imagenExistente! : yunguyoImg)}
                   alt="Preview"
                   className="h-20 w-20 rounded object-cover"
                 />

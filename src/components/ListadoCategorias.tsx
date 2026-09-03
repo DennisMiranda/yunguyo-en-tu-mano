@@ -1,0 +1,95 @@
+import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
+import { supabase } from '../lib/supabase';
+import { ROUTES } from '../lib/routes';
+
+interface Categoria {
+  id: string;
+  nombre: string;
+  slug: string;
+  imagen: string | null;
+}
+
+export default function ListadoCategorias() {
+  const [categorias, setCategorias] = useState<Categoria[]>([]);
+  const [cargando, setCargando] = useState(true);
+
+  useEffect(() => {
+    const cargarCategorias = async () => {
+      if (!supabase) {
+        setCargando(false);
+        return;
+      }
+
+      const { data } = await supabase
+        .from('categorias')
+        .select('id, nombre, slug, imagen')
+        .order('nombre');
+
+      setCategorias(data || []);
+      setCargando(false);
+    };
+
+    cargarCategorias();
+  }, []);
+
+  if (cargando) {
+    return (
+      <section className="py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-2xl font-bold text-gray-900 mb-8 text-center">
+            Explora por categoría
+          </h2>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            {[...Array(4)].map((_, i) => (
+              <div
+                key={i}
+                className="animate-pulse bg-gray-200 h-32 rounded-lg"
+              />
+            ))}
+          </div>
+        </div>
+      </section>
+    );
+  }
+
+  if (categorias.length === 0) {
+    return null;
+  }
+
+  return (
+    <section className="py-16">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 className="text-2xl font-bold text-gray-900 mb-8 text-center">
+          Explora por categoría
+        </h2>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+          {categorias.map((categoria) => (
+            <Link
+              key={categoria.id}
+              to={`${ROUTES.CATEGORIAS}/${categoria.slug}`}
+              className="group relative bg-gray-100 rounded-lg overflow-hidden aspect-square"
+            >
+              {categoria.imagen ? (
+                <img
+                  src={categoria.imagen}
+                  alt={categoria.nombre}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+              ) : (
+                <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-blue-100 to-blue-200">
+                  <span className="text-4xl">📦</span>
+                </div>
+              )}
+              <div className="absolute inset-0 bg-black/40 flex items-end">
+                <span className="w-full text-center text-white font-medium p-3">
+                  {categoria.nombre}
+                </span>
+              </div>
+            </Link>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}

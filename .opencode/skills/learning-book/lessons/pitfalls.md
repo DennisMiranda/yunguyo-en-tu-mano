@@ -43,3 +43,10 @@
 - **Cause:** Security risk, tokens exposed in git history
 - **Fix:** Use `process.env.VARIABLE_NAME` and `test.skip()` when not configured
 - **Date:** 2026-09-03
+
+### Missing Files Before Phase Completion
+
+- **Mistake:** Not checking git status before marking phase complete
+- **Cause:** Forgetting to commit updated commit plans, docs, or modified files
+- **Fix:** Always run `git status` before merging to main. Commit all modified and untracked files.
+- **Date:** 2026-09-03

@@ -1,9 +1,9 @@
+import { ArrowLeft, Pencil, Plus, Trash2 } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Plus, Pencil, Trash2, ArrowLeft } from 'lucide-react';
-import { supabase } from '../../lib/supabase';
 import yunguyoImg from '../../assets/yunguyo.jpg';
 import TablaAdmin from '../../components/TablaAdmin';
+import { supabase } from '../../lib/supabase';
 
 interface Emprendimiento {
   id: string;
@@ -95,50 +95,55 @@ export default function EmprendimientosAdmin() {
           Volver
         </Link>
       </div>
-      <div className="flex justify-between items-center">
-        <h2 className="text-2xl font-bold text-gray-900">Emprendimientos</h2>
+      <div className="flex justify-between items-center md:gap-none gap-6">
+        <h2 className="md:text-2xl text-xl font-bold text-gray-900">Emprendimientos</h2>
         <Link
           to="/admin/emprendimientos/nuevo"
-          className="flex items-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700"
+          className="flex items-center gap-2 md:px-4 md:py-2 px-2 py-1 bg-blue-600 text-white rounded-md hover:bg-blue-700"
         >
           <Plus className="h-4 w-4" />
           Nuevo emprendimiento
         </Link>
       </div>
 
-      <TablaAdmin columnas={columnas}>
+      {/* Mobile: Cards */}
+      <div className="md:hidden space-y-3">
         {emprendimientos.map((emprendimiento) => (
-          <tr key={emprendimiento.id}>
-            <td className="px-6 py-4">
-              {emprendimiento.imagen_principal && emprendimiento.imagen_principal.startsWith('http') ? (
-                <img
-                  src={emprendimiento.imagen_principal}
-                  alt={emprendimiento.nombre}
-                  className="h-12 w-12 rounded object-cover"
-                />
-              ) : (
-                <img
-                  src={yunguyoImg}
-                  alt={emprendimiento.nombre}
-                  className="h-12 w-12 rounded object-cover"
-                />
-              )}
-            </td>
-            <td className="px-6 py-4 font-medium text-gray-900">
-              {emprendimiento.nombre}
-            </td>
-            <td className="px-6 py-4 text-gray-600">
-              {emprendimiento.categoria_nombre || '-'}
-            </td>
-            <td className="px-6 py-4 text-gray-600">
-              {emprendimiento.whatsapp || '-'}
-            </td>
-            <td className="px-6 py-4 text-right space-x-2">
+          <div
+            key={emprendimiento.id}
+            className="bg-white rounded-lg shadow-sm overflow-hidden"
+          >
+            <div className="flex gap-3 p-4">
+              <img
+                src={
+                  emprendimiento.imagen_principal?.startsWith('http')
+                    ? emprendimiento.imagen_principal
+                    : yunguyoImg
+                }
+                alt={emprendimiento.nombre}
+                className="h-16 w-16 rounded object-cover shrink-0"
+              />
+              <div className="flex-1 min-w-0">
+                <h3 className="font-medium text-gray-900 truncate">
+                  {emprendimiento.nombre}
+                </h3>
+                <p className="text-sm text-gray-500 truncate">
+                  {emprendimiento.categoria_nombre || 'Sin categoría'}
+                </p>
+                {emprendimiento.whatsapp && (
+                  <p className="text-xs text-gray-400 mt-1 truncate">
+                    WA: {emprendimiento.whatsapp}
+                  </p>
+                )}
+              </div>
+            </div>
+            <div className="flex justify-end gap-2 px-4 pb-3 pt-1 border-t border-gray-100">
               <Link
                 to={`/admin/emprendimientos/${emprendimiento.id}/editar`}
-                className="inline-flex items-center p-2 text-gray-600 hover:text-blue-600"
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 text-sm text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded-md"
               >
-                <Pencil className="h-4 w-4" />
+                <Pencil className="h-3.5 w-3.5" />
+                Editar
               </Link>
               <button
                 type="button"
@@ -146,14 +151,67 @@ export default function EmprendimientosAdmin() {
                   handleEliminar(emprendimiento.id, emprendimiento.nombre)
                 }
                 disabled={eliminando === emprendimiento.id}
-                className="inline-flex items-center p-2 text-gray-600 hover:text-red-600 disabled:opacity-50"
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 text-sm text-gray-600 hover:text-red-600 hover:bg-red-50 rounded-md disabled:opacity-50"
               >
-                <Trash2 className="h-4 w-4" />
+                <Trash2 className="h-3.5 w-3.5" />
+                Eliminar
               </button>
-            </td>
-          </tr>
+            </div>
+          </div>
         ))}
-      </TablaAdmin>
+      </div>
+
+      {/* Desktop: Tabla */}
+      <div className="hidden md:block">
+        <TablaAdmin columnas={columnas}>
+          {emprendimientos.map((emprendimiento) => (
+            <tr key={emprendimiento.id}>
+              <td className="px-6 py-4">
+                {emprendimiento.imagen_principal && emprendimiento.imagen_principal.startsWith('http') ? (
+                  <img
+                    src={emprendimiento.imagen_principal}
+                    alt={emprendimiento.nombre}
+                    className="h-12 w-12 rounded object-cover"
+                  />
+                ) : (
+                  <img
+                    src={yunguyoImg}
+                    alt={emprendimiento.nombre}
+                    className="h-12 w-12 rounded object-cover"
+                  />
+                )}
+              </td>
+              <td className="px-6 py-4 font-medium text-gray-900">
+                {emprendimiento.nombre}
+              </td>
+              <td className="px-6 py-4 text-gray-600">
+                {emprendimiento.categoria_nombre || '-'}
+              </td>
+              <td className="px-6 py-4 text-gray-600">
+                {emprendimiento.whatsapp || '-'}
+              </td>
+              <td className="px-6 py-4 text-right space-x-2">
+                <Link
+                  to={`/admin/emprendimientos/${emprendimiento.id}/editar`}
+                  className="inline-flex items-center p-2 text-gray-600 hover:text-blue-600"
+                >
+                  <Pencil className="h-4 w-4" />
+                </Link>
+                <button
+                  type="button"
+                  onClick={() =>
+                    handleEliminar(emprendimiento.id, emprendimiento.nombre)
+                  }
+                  disabled={eliminando === emprendimiento.id}
+                  className="inline-flex items-center p-2 text-gray-600 hover:text-red-600 disabled:opacity-50"
+                >
+                  <Trash2 className="h-4 w-4" />
+                </button>
+              </td>
+            </tr>
+          ))}
+        </TablaAdmin>
+      </div>
 
       {emprendimientos.length === 0 && (
         <div className="bg-white rounded-lg shadow-sm p-8 text-center text-gray-600">

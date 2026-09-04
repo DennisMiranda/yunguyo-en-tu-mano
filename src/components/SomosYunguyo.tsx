@@ -13,7 +13,7 @@ export default function SomosYunguyo() {
           </p>
           <p className="text-gray-600 mb-4">
             Aquí encontrarás restaurantes, tiendas, servicios y mucho más,
-            todos de emprendedores yunguyanos que impulsan la economía local.
+            todos de emprendedores yunguyeños que impulsan la economía local.
           </p>
         </div>
       </div>

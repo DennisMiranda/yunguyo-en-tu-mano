@@ -2,7 +2,6 @@ import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Plus, Pencil, Trash2, ArrowLeft } from 'lucide-react';
 import { supabase } from '../../lib/supabase';
-import yunguyoImg from '../../assets/yunguyo.jpg';
 import TablaAdmin from '../../components/TablaAdmin';
 
 interface Categoria {
@@ -10,7 +9,6 @@ interface Categoria {
   nombre: string;
   slug: string;
   descripcion: string | null;
-  imagen: string | null;
   emprendimientos_count?: number;
 }
 
@@ -18,7 +16,6 @@ interface Categoria {
 type SupabaseRow = any;
 
 const columnas = [
-  { nombre: 'Imagen' },
   { nombre: 'Nombre' },
   { nombre: 'Descripción' },
   { nombre: 'Emprendimientos' },
@@ -46,7 +43,6 @@ export default function CategoriasAdmin() {
       nombre: cat.nombre,
       slug: cat.slug,
       descripcion: cat.descripcion,
-      imagen: cat.imagen,
       emprendimientos_count: cat.emprendimientos?.[0]?.count || 0,
     }));
 
@@ -109,39 +105,33 @@ export default function CategoriasAdmin() {
         </Link>
       </div>
 
-      <TablaAdmin columnas={columnas}>
+      {/* Mobile: Cards */}
+      <div className="md:hidden space-y-3">
         {categorias.map((categoria) => (
-          <tr key={categoria.id}>
-            <td className="px-6 py-4">
-              {categoria.imagen && categoria.imagen.startsWith('http') ? (
-                <img
-                  src={categoria.imagen}
-                  alt={categoria.nombre}
-                  className="h-12 w-12 rounded object-cover"
-                />
-              ) : (
-                <img
-                  src={yunguyoImg}
-                  alt={categoria.nombre}
-                  className="h-12 w-12 rounded object-cover"
-                />
-              )}
-            </td>
-            <td className="px-6 py-4 font-medium text-gray-900">
-              {categoria.nombre}
-            </td>
-            <td className="px-6 py-4 text-gray-600 max-w-xs truncate">
-              {categoria.descripcion || '-'}
-            </td>
-            <td className="px-6 py-4 text-gray-600">
-              {categoria.emprendimientos_count || 0}
-            </td>
-            <td className="px-6 py-4 text-right space-x-2">
+          <div
+            key={categoria.id}
+            className="bg-white rounded-lg shadow-sm p-4 space-y-3"
+          >
+            <div className="flex items-start justify-between">
+              <div className="flex-1 min-w-0">
+                <h3 className="font-medium text-gray-900 truncate">
+                  {categoria.nombre}
+                </h3>
+                <p className="text-sm text-gray-500 mt-1 line-clamp-2">
+                  {categoria.descripcion || 'Sin descripción'}
+                </p>
+              </div>
+              <span className="ml-3 shrink-0 inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-gray-100 text-gray-700">
+                {categoria.emprendimientos_count || 0} emprendimientos
+              </span>
+            </div>
+            <div className="flex justify-end gap-2 pt-1 border-t border-gray-100">
               <Link
                 to={`/admin/categorias/${categoria.id}/editar`}
-                className="inline-flex items-center p-2 text-gray-600 hover:text-blue-600"
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 text-sm text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded-md"
               >
-                <Pencil className="h-4 w-4" />
+                <Pencil className="h-3.5 w-3.5" />
+                Editar
               </Link>
               <button
                 type="button"
@@ -149,14 +139,52 @@ export default function CategoriasAdmin() {
                   handleEliminar(categoria.id, categoria.nombre)
                 }
                 disabled={eliminando === categoria.id}
-                className="inline-flex items-center p-2 text-gray-600 hover:text-red-600 disabled:opacity-50"
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 text-sm text-gray-600 hover:text-red-600 hover:bg-red-50 rounded-md disabled:opacity-50"
               >
-                <Trash2 className="h-4 w-4" />
+                <Trash2 className="h-3.5 w-3.5" />
+                Eliminar
               </button>
-            </td>
-          </tr>
+            </div>
+          </div>
         ))}
-      </TablaAdmin>
+      </div>
+
+      {/* Desktop: Tabla */}
+      <div className="hidden md:block">
+        <TablaAdmin columnas={columnas}>
+          {categorias.map((categoria) => (
+            <tr key={categoria.id}>
+              <td className="px-6 py-4 font-medium text-gray-900">
+                {categoria.nombre}
+              </td>
+              <td className="px-6 py-4 text-gray-600 max-w-xs truncate">
+                {categoria.descripcion || '-'}
+              </td>
+              <td className="px-6 py-4 text-gray-600">
+                {categoria.emprendimientos_count || 0}
+              </td>
+              <td className="px-6 py-4 text-right space-x-2">
+                <Link
+                  to={`/admin/categorias/${categoria.id}/editar`}
+                  className="inline-flex items-center p-2 text-gray-600 hover:text-blue-600"
+                >
+                  <Pencil className="h-4 w-4" />
+                </Link>
+                <button
+                  type="button"
+                  onClick={() =>
+                    handleEliminar(categoria.id, categoria.nombre)
+                  }
+                  disabled={eliminando === categoria.id}
+                  className="inline-flex items-center p-2 text-gray-600 hover:text-red-600 disabled:opacity-50"
+                >
+                  <Trash2 className="h-4 w-4" />
+                </button>
+              </td>
+            </tr>
+          ))}
+        </TablaAdmin>
+      </div>
 
       {categorias.length === 0 && (
         <div className="bg-white rounded-lg shadow-sm p-8 text-center text-gray-600">

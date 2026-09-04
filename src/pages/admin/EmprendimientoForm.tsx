@@ -41,7 +41,6 @@ export default function EmprendimientoForm() {
   const esEdicion = Boolean(id);
 
   const [nombre, setNombre] = useState('');
-  const [slug, setSlug] = useState('');
   const [descripcion, setDescripcion] = useState('');
   const [categoriaId, setCategoriaId] = useState('');
   const [whatsapp, setWhatsapp] = useState('');
@@ -80,7 +79,6 @@ export default function EmprendimientoForm() {
           .single();
         if (data) {
           setNombre(data.nombre);
-          setSlug(data.slug);
           setDescripcion(data.descripcion || '');
           setCategoriaId(data.categoria_id);
           setWhatsapp(data.whatsapp || '');
@@ -113,12 +111,45 @@ export default function EmprendimientoForm() {
       .replace(/(^-|-$)/g, '');
   };
 
-  const handleNombreChange = (value: string) => {
-    setNombre(value);
-    if (!esEdicion) {
-      setSlug(generarSlug(value));
+  const convertirGoogleMapsAEmbed = (url: string): string => {
+    if (!url) return '';
+
+    const coordMatch = url.match(/@(-?\d+\.\d+),(-?\d+\.\d+)/);
+    if (coordMatch) {
+      const lat = coordMatch[1];
+      const lng = coordMatch[2];
+      return `https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d100!2d${lng}!3d${lat}!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1`;
     }
+
+    const qMatch = url.match(/[?&]q=(-?\d+\.\d+),(-?\d+\.\d+)/);
+    if (qMatch) {
+      const lat = qMatch[1];
+      const lng = qMatch[2];
+      return `https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d100!2d${lng}!3d${lat}!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1`;
+    }
+
+    const llMatch = url.match(/[?&]ll=(-?\d+\.\d+),(-?\d+\.\d+)/);
+    if (llMatch) {
+      const lat = llMatch[1];
+      const lng = llMatch[2];
+      return `https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d100!2d${lng}!3d${lat}!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1`;
+    }
+
+    const centerMatch = url.match(/[?&]center=(-?\d+\.\d+),(-?\d+\.\d+)/);
+    if (centerMatch) {
+      const lat = centerMatch[1];
+      const lng = centerMatch[2];
+      return `https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d100!2d${lng}!3d${lat}!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1`;
+    }
+
+    return '';
   };
+
+  const handleGoogleMapsChange = (value: string) => {
+    setGoogleMaps(value);
+  };
+
+  const urlEmbedGenerada = googleMaps ? convertirGoogleMapsAEmbed(googleMaps) : '';
 
   const subirImagen = async (file: File): Promise<string | null> => {
     if (!supabase) return null;
@@ -201,6 +232,9 @@ export default function EmprendimientoForm() {
       }
     }
 
+    const slugGenerado = generarSlug(nombre);
+    const mapaEmbed = convertirGoogleMapsAEmbed(googleMaps);
+
     const datos: {
       nombre: string;
       slug: string;
@@ -213,11 +247,11 @@ export default function EmprendimientoForm() {
       horario: Json | null;
     } = {
       nombre,
-      slug,
+      slug: slugGenerado,
       descripcion: descripcion || null,
       categoria_id: categoriaId,
       whatsapp: whatsapp || null,
-      google_maps: googleMaps || null,
+      google_maps: mapaEmbed || googleMaps || null,
       imagen_principal: urlImagen,
       galeria: urlsGaleria,
       horario:
@@ -272,20 +306,7 @@ export default function EmprendimientoForm() {
           <input
             type="text"
             value={nombre}
-            onChange={(e) => handleNombreChange(e.target.value)}
-            required
-            className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-          />
-        </div>
-
-        <div>
-          <label className="block text-sm font-medium text-gray-700 mb-1">
-            Slug *
-          </label>
-          <input
-            type="text"
-            value={slug}
-            onChange={(e) => setSlug(e.target.value)}
+            onChange={(e) => setNombre(e.target.value)}
             required
             className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
@@ -337,15 +358,32 @@ export default function EmprendimientoForm() {
 
         <div>
           <label className="block text-sm font-medium text-gray-700 mb-1">
-            Google Maps (iframe embed)
+            Google Maps
           </label>
-          <textarea
+          <input
+            type="url"
             value={googleMaps}
-            onChange={(e) => setGoogleMaps(e.target.value)}
-            rows={3}
-            placeholder='<iframe src="https://www.google.com/maps/embed?..."></iframe>'
-            className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 font-mono text-sm"
+            onChange={(e) => handleGoogleMapsChange(e.target.value)}
+            placeholder="https://www.google.com/maps/place/..."
+            className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm"
           />
+          <p className="mt-1 text-xs text-gray-400">
+            Pegá el link de Google Maps del negocio
+          </p>
+          {urlEmbedGenerada && (
+            <div className="mt-3 rounded-lg overflow-hidden border border-gray-200">
+              <iframe
+                src={urlEmbedGenerada}
+                width="100%"
+                height="250"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Vista previa del mapa"
+              />
+            </div>
+          )}
         </div>
 
         <div>
@@ -444,7 +482,7 @@ export default function EmprendimientoForm() {
           </label>
           <div className="space-y-3">
             {DIAS_SEMANA.map((dia) => (
-              <div key={dia} className="flex items-center gap-4">
+              <div key={dia} className="flex flex-col gap-2 md:flex-row md:items-center md:gap-4">
                 <label className="flex items-center gap-2 w-32">
                   <input
                     type="checkbox"
@@ -455,7 +493,7 @@ export default function EmprendimientoForm() {
                   <span className="text-sm">{DIAS_LABELS[dia]}</span>
                 </label>
                 {horario[dia]?.activo && (
-                  <>
+                  <div className="flex items-center gap-2 pl-7 md:pl-0">
                     <input
                       type="time"
                       value={horario[dia]?.apertura || '09:00'}
@@ -473,7 +511,7 @@ export default function EmprendimientoForm() {
                       }
                       className="px-2 py-1 border border-gray-300 rounded text-sm"
                     />
-                  </>
+                  </div>
                 )}
               </div>
             ))}

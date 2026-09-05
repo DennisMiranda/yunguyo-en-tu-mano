@@ -18,7 +18,7 @@ interface Emprendimiento {
   whatsapp: string | null;
   google_maps: string | null;
   google_maps_url: string | null;
-  horario: Record<string, { abre: string; cierra: string } | null> | null;
+  horario: Record<string, { activo: boolean; apertura?: string; cierre?: string } | null> | null;
   categoria_id: string;
   categorias: { nombre: string; slug: string } | null;
 }
@@ -233,7 +233,7 @@ export default function EmprendimientoDetalle() {
                         <span className="capitalize text-gray-600">{dia}</span>
                         <span className="text-gray-900">
                           {horario?.activo
-                            ? `${horario.abre} - ${horario.cierra}`
+                            ? `${horario.apertura || '09:00'} - ${horario.cierre || '18:00'}`
                             : 'Cerrado'}
                         </span>
                       </div>
@@ -270,10 +270,18 @@ export default function EmprendimientoDetalle() {
             </div>
 
             {emprendimiento.google_maps && (
-              <div
-                className="mt-6 rounded-lg overflow-hidden"
-                dangerouslySetInnerHTML={{ __html: emprendimiento.google_maps }}
-              />
+              <div className="mt-6 rounded-lg overflow-hidden">
+                <iframe
+                  src={emprendimiento.google_maps}
+                  width="100%"
+                  height="250"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="Ubicación en el mapa"
+                />
+              </div>
             )}
           </div>
         </div>

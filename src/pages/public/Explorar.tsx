@@ -19,6 +19,7 @@ interface Emprendimiento {
   slug: string;
   descripcion: string | null;
   imagen_principal: string | null;
+  categoria_id: string;
   categorias: { nombre: string } | null;
 }
 
@@ -45,7 +46,7 @@ export default function Explorar() {
         supabase
           .from('emprendimientos')
           .select(
-            'id, nombre, slug, descripcion, imagen_principal, categorias(nombre)'
+            'id, nombre, slug, descripcion, imagen_principal, categoria_id, categorias(nombre)'
           ),
       ]);
 
@@ -63,7 +64,11 @@ export default function Explorar() {
         emp.descripcion?.toLowerCase().includes(busqueda.toLowerCase())
       : true;
 
-    return coincideBusqueda;
+    const coincideCategoria = categoriaSeleccionada
+      ? emp.categoria_id === categoriaSeleccionada
+      : true;
+
+    return coincideBusqueda && coincideCategoria;
   });
 
   const handleBusqueda = (e: React.FormEvent) => {

@@ -1,8 +1,8 @@
+import { ArrowLeft, Plus, Upload, X } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
-import { Upload, X, Plus, ArrowLeft } from 'lucide-react';
-import { supabase } from '../../lib/supabase';
 import type { Json } from '../../lib/database.types';
+import { supabase } from '../../lib/supabase';
 
 interface Categoria {
   id: string;
@@ -90,7 +90,11 @@ export default function EmprendimientoForm() {
             const raw = data.horario as Record<string, HorarioDia>;
             for (const dia of DIAS_SEMANA) {
               if (raw[dia]?.activo) {
-                horarioLimpio[dia] = raw[dia];
+                horarioLimpio[dia] = {
+                  activo: true,
+                  apertura: raw[dia].apertura || '09:00',
+                  cierre: raw[dia].cierre || '18:00',
+                };
               }
             }
             setHorario(horarioLimpio);
@@ -118,28 +122,28 @@ export default function EmprendimientoForm() {
     if (coordMatch) {
       const lat = coordMatch[1];
       const lng = coordMatch[2];
-      return `https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d100!2d${lng}!3d${lat}!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1`;
+      return `https://maps.google.com/maps?q=${lat},${lng}&z=15&output=embed`;
     }
 
     const qMatch = url.match(/[?&]q=(-?\d+\.\d+),(-?\d+\.\d+)/);
     if (qMatch) {
       const lat = qMatch[1];
       const lng = qMatch[2];
-      return `https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d100!2d${lng}!3d${lat}!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1`;
+      return `https://maps.google.com/maps?q=${lat},${lng}&z=15&output=embed`;
     }
 
     const llMatch = url.match(/[?&]ll=(-?\d+\.\d+),(-?\d+\.\d+)/);
     if (llMatch) {
       const lat = llMatch[1];
       const lng = llMatch[2];
-      return `https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d100!2d${lng}!3d${lat}!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1`;
+      return `https://maps.google.com/maps?q=${lat},${lng}&z=15&output=embed`;
     }
 
     const centerMatch = url.match(/[?&]center=(-?\d+\.\d+),(-?\d+\.\d+)/);
     if (centerMatch) {
       const lat = centerMatch[1];
       const lng = centerMatch[2];
-      return `https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d100!2d${lng}!3d${lat}!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1`;
+      return `https://maps.google.com/maps?q=${lat},${lng}&z=15&output=embed`;
     }
 
     return '';
@@ -368,7 +372,7 @@ export default function EmprendimientoForm() {
             className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm"
           />
           <p className="mt-1 text-xs text-gray-400">
-            Pegá el link de Google Maps del negocio
+            Pega el link de Google Maps del negocio
           </p>
           {urlEmbedGenerada && (
             <div className="mt-3 rounded-lg overflow-hidden border border-gray-200">
